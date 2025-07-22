@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAS PPPL - Food Delivery Service</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3x1 font-bold mb-8 text-center">Katalog Layanan</h2>
+            <!-- filtering -->
+            <div class="mb-6 flex justify-center gap-4">
+                <button class="filter-btn px-4 py-2 bg-orange-500 text-white rounded" data-category="all">Semua</button>
+                <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-category="delivery">Delivery</button>
+                <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-category="promo">Promo</button>
+                <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-category="membership">Membership</button>
+            </div>
+            <!-- Catalog -->
+            <div class="grid md:grid-cols-3 gap-8" id="serviceCatalog"></div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,169 @@
+  <!DOCTYPE html>
+  <html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yukihira Diningゆきひら - Layanan Antar Makanan</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Typing effect (TypeIt) -->
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
+    <!-- icon website -->
+    <link rel="icon" href="assets/img/logo-icon.png" type="image/png">
+    <style>
+      .parallax {
+        background-image: url('assets/img/banner21-img.png');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+      .transition-bg {
+        transition: background-color 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <nav id="navbar"
+      class="fixed w-full top-0 left-0 z-50 transition-bg bg-transparent">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="assets/img/logo-icon.png" alt="Logo" class="w-8 h-8 rounded-full">
+          <span class="navbar-brand font-bold text-lg text-white transition-colors">Yukihira Dining</span>
+        </a>
+        <ul class="flex gap-6 font-medium">
+          <li><a href="index.html" class="navbar-link text-white hover:text-orange-600 transition">Beranda</a></li>
+          <li><a href="menu.html" class="navbar-link text-white hover:text-orange-600 transition">Menu</a></li>
+          <li><a href="about.html" class="navbar-link text-white hover:text-orange-600 transition">Tentang</a></li>
+          <li><a href="contact.html" class="navbar-link text-white hover:text-orange-600 transition">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="parallax relative h-[70vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-opacity-20"></div>
+      <div class="relative z-10 text-center text-white flex flex-col items-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Yukihira Diningゆきひら</h1>
+        <div id="typing-headline" class="text-xl md:text-2xl mb-2 h-[32px] font-semibold"></div>
+        <p class="mb-6 max-w-2xl text-lg md:text-xl drop-shadow-lg">Solusi mudah, cepat, dan aman untuk pesan makanan favoritmu! Nikmati layanan antar makanan dari restoran terbaik di kotamu.</p>
+        <button onclick="document.getElementById('menu-section').scrollIntoView({behavior:'smooth'})"
+          class="bg-blue-600 hover:bg-blue-800 px-6 py-3 rounded-full text-lg font-semibold shadow-lg transition">Lihat Menu</button>
+      </div>
+    </section>
+
+    <!-- Statistik Dinamis -->
+    <section class="max-w-5xl mx-auto py-10 flex justify-around items-center gap-4">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-blue-800" id="stat-users">0</div>
+        <div class="text-gray-600">Pengguna Terdaftar</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-blue-800" id="stat-orders">0</div>
+        <div class="text-gray-600">Pesanan Sukses</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-blue-800" id="stat-resto">0</div>
+        <div class="text-gray-600">Restoran Partner</div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu-section" class="max-w-6xl mx-auto px-4 py-10">
+      <h2 class="text-2xl font-bold text-center mb-8">Menu Favorit</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+        <!-- CARD 1 -->
+        <div class="bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="assets/img/chaliapin-steak.png"
+            alt="Chaliapin Steak Don" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col gap-2">
+            <h3 class="font-bold text-lg">Chaliapin Steak Don</h3>
+            <p class="text-gray-600 text-sm">Steak marinasi dengan irisan bawang bombai yang telah di tumis.</p>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-blue-800 font-bold">Rp22.000</span>
+              <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="assets/img/apple-risotto.png"
+            alt="Apple Risotto" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col gap-2">
+            <h3 class="font-bold text-lg">Apple Risotto</h3>
+            <p class="text-gray-600 text-sm">Risotto apel dengan topping apel yang dipotong berbentuk dadu dan bacon.</p>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-blue-800 font-bold">Rp30.000</span>
+              <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="assets/img/chicken-egg-tempura.png"
+            alt="Chicken Egg Tempura Don" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col gap-2">
+            <h3 class="font-bold text-lg">Chicken Egg Tempura Don</h3>
+            <p class="text-gray-600 text-sm">Telur beku yang digoreng dengan adonan tempura dan menghasilkan telur tempura setengah matang di atas nasi.</p>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-blue-800 font-bold">Rp18.000</span>
+              <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="assets/img/fried-rice.png"
+            alt="Nasi Goreng Tanpa Aroma" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col gap-2">
+            <h3 class="font-bold text-lg">Nasi Goreng Tanpa Aroma</h3>
+            <p class="text-gray-600 text-sm">Nasi goreng yang mengandung unsur dari masing-masing lima tema kuliner paling populer.</p>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-blue-800 font-bold">Rp40.000</span>
+              <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CARD 5 -->
+        <div class="bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="assets/img/african-ramen.png"
+            alt="African Ramen" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col gap-2">
+            <h3 class="font-bold text-lg">African Ramen</h3>
+            <p class="text-gray-600 text-sm">Ramen dengan Sup Ayam Muamba, kacang tanah serta harissa untuk meningkatkan cita rasa.</p>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-blue-800 font-bold">Rp25.000</span>
+              <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 6 -->
+        <div class="bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="assets/img/mapo-tofu.png"
+            alt="Mapo Tofu" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col gap-2">
+            <h3 class="font-bold text-lg">Mapo Tofu</h3>
+            <p class="text-gray-600 text-sm">Hidangan tahu sutra yang dimasak dalam saus pedas yang kaya akan rasa dari doubanjiang, douchi, dan cabai.</p>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-blue-800 font-bold">Rp28.000</span>
+              <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-10">
+      <div class="max-w-5xl mx-auto text-center">
+        &copy; 2025 Yukihira Diningゆきひら. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Script: Typing, Counter -->
+    <script src="assets/js/index.js"></script>
+  </body>
+  </html>
