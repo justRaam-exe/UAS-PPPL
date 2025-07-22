@@ -1,82 +1,144 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tentang Kami - FoodieXpress</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Kami - FastEats</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/alpinejs@3.13.0/dist/cdn.min.js" defer></script>
+  <style>
+    .timeline-dot {
+      box-shadow: 0 0 0 8px #f59e42, 0 0 0 16px #fff;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-6 text-center">Cerita Kami</h2>
-      <!-- Timeline -->
-      <div class="timeline flex flex-col gap-8">
-        <div class="timeline-item flex gap-4 items-center animate-fade-in">
-          <div class="timeline-dot bg-orange-500 h-6 w-6 rounded-full"></div>
-          <div>
-            <h4 class="text-xl font-semibold">2022</h4>
-            <p>FoodieXpress didirikan oleh 3 sahabat di Bandung.</p>
+<body class="bg-gray-50">
+  <header class="bg-orange-500 py-4 text-white text-center font-bold text-xl">Tentang FastEats</header>
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <!-- Company Story Timeline -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6">Sejarah Perusahaan</h2>
+      <div class="relative border-l-4 border-orange-300 pl-8">
+        <div class="mb-10 animate-fadeIn" style="animation-delay: 0.2s;">
+          <div class="absolute -left-5 top-1 timeline-dot w-5 h-5 rounded-full bg-orange-500"></div>
+          <h3 class="font-semibold text-lg text-orange-500">2022</h3>
+          <p class="text-gray-600">FastEats didirikan dengan misi mempermudah akses makanan favorit bagi semua orang di kota besar Indonesia.</p>
+        </div>
+        <div class="mb-10 animate-fadeIn" style="animation-delay: 0.4s;">
+          <div class="absolute -left-5 top-1 timeline-dot w-5 h-5 rounded-full bg-orange-500"></div>
+          <h3 class="font-semibold text-lg text-orange-500">2023</h3>
+          <p class="text-gray-600">Aplikasi mobile dan website resmi diluncurkan, serta menjalin kerjasama dengan 50+ restoran partner.</p>
+        </div>
+        <div class="mb-10 animate-fadeIn" style="animation-delay: 0.6s;">
+          <div class="absolute -left-5 top-1 timeline-dot w-5 h-5 rounded-full bg-orange-500"></div>
+          <h3 class="font-semibold text-lg text-orange-500">2024</h3>
+          <p class="text-gray-600">Mencapai 10.000+ pengguna aktif bulanan, ekspansi layanan hingga 5 kota besar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Member Cards -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Tim Kami</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="group perspective">
+          <div class="relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+            <!-- Front -->
+            <div class="absolute inset-0 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center p-6 backface-hidden">
+              <img class="w-24 h-24 rounded-full mb-2 object-cover" src="https://randomuser.me/api/portraits/men/32.jpg" alt="CEO">
+              <h4 class="font-bold">Rama Putra</h4>
+              <div class="text-orange-500">CEO</div>
+            </div>
+            <!-- Back -->
+            <div class="absolute inset-0 bg-orange-100 rounded-lg shadow-lg flex flex-col items-center justify-center p-6 rotate-y-180 backface-hidden">
+              <p class="text-center text-gray-700">Berpengalaman 7 tahun di bidang teknologi dan logistik. Visioner dan penggagas utama FastEats.</p>
+            </div>
           </div>
         </div>
-        <div class="timeline-item flex gap-4 items-center animate-fade-in" style="animation-delay: .2s">
-          <div class="timeline-dot bg-orange-500 h-6 w-6 rounded-full"></div>
-          <div>
-            <h4 class="text-xl font-semibold">2023</h4>
-            <p>Menjadi platform delivery No.1 di Jawa Barat.</p>
+        <div class="group perspective">
+          <div class="relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+            <!-- Front -->
+            <div class="absolute inset-0 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center p-6 backface-hidden">
+              <img class="w-24 h-24 rounded-full mb-2 object-cover" src="https://randomuser.me/api/portraits/women/44.jpg" alt="CTO">
+              <h4 class="font-bold">Dina Ayu</h4>
+              <div class="text-orange-500">CTO</div>
+            </div>
+            <!-- Back -->
+            <div class="absolute inset-0 bg-orange-100 rounded-lg shadow-lg flex flex-col items-center justify-center p-6 rotate-y-180 backface-hidden">
+              <p class="text-center text-gray-700">Ahli teknologi dan pengembangan aplikasi, mengatur sistem FastEats berjalan cepat dan aman.</p>
+            </div>
           </div>
         </div>
-        <div class="timeline-item flex gap-4 items-center animate-fade-in" style="animation-delay: .4s">
-          <div class="timeline-dot bg-orange-500 h-6 w-6 rounded-full"></div>
-          <div>
-            <h4 class="text-xl font-semibold">2024</h4>
-            <p>Ekspansi ke seluruh Indonesia dan 10.000+ mitra restoran.</p>
+        <div class="group perspective">
+          <div class="relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+            <!-- Front -->
+            <div class="absolute inset-0 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center p-6 backface-hidden">
+              <img class="w-24 h-24 rounded-full mb-2 object-cover" src="https://randomuser.me/api/portraits/men/65.jpg" alt="COO">
+              <h4 class="font-bold">Budi Santoso</h4>
+              <div class="text-orange-500">COO</div>
+            </div>
+            <!-- Back -->
+            <div class="absolute inset-0 bg-orange-100 rounded-lg shadow-lg flex flex-col items-center justify-center p-6 rotate-y-180 backface-hidden">
+              <p class="text-center text-gray-700">Berpengalaman di manajemen operasional dan logistik, memastikan pengiriman selalu tepat waktu.</p>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Team Members -->
-      <h3 class="text-2xl font-bold mt-12 mb-6 text-center">Tim Kami</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="team-card bg-white p-6 rounded-lg shadow-lg cursor-pointer transform hover:rotate-y-180 transition-all duration-700">
-          <div class="front">
-            <img src="assets/img/team1.jpg" alt="Founder" class="rounded-full h-24 w-24 mx-auto mb-4" />
-            <h4 class="text-lg font-semibold text-center">Raam</h4>
+      <style>
+        .perspective { perspective: 1200px; }
+        .transform-style-preserve-3d { transform-style: preserve-3d; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        .backface-hidden { backface-visibility: hidden; }
+      </style>
+    </section>
+
+    <!-- Company Stats -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Statistik Kami</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-orange-500" id="about-users">0</div>
+          <div class="text-gray-600">Pengguna Aktif</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-orange-500" id="about-resto">0</div>
+          <div class="text-gray-600">Restoran Partner</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-orange-500" id="about-delivery">0</div>
+          <div class="text-gray-600">Pengiriman Sukses</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Values -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Nilai-Nilai Perusahaan</h2>
+      <div class="flex flex-col sm:flex-row gap-8">
+        <div x-data="{ open: false }" class="flex-1 bg-white rounded-lg shadow-lg p-6 cursor-pointer hover:bg-orange-50 transition" @click="open=!open">
+          <div class="flex items-center gap-2">
+            <span class="text-orange-500 text-xl font-bold">🍽️</span>
+            <span class="font-semibold">Kualitas Makanan</span>
           </div>
-          <div class="back hidden">
-            <p class="text-center">CEO & Co-founder. Pengalaman 5 tahun di industri kuliner dan startup.</p>
+          <div x-show="open" class="mt-3 text-gray-700 transition-all">Kami hanya bermitra dengan restoran yang menjaga kualitas rasa, kebersihan, dan pelayanan.</div>
+        </div>
+        <div x-data="{ open: false }" class="flex-1 bg-white rounded-lg shadow-lg p-6 cursor-pointer hover:bg-orange-50 transition" @click="open=!open">
+          <div class="flex items-center gap-2">
+            <span class="text-orange-500 text-xl font-bold">⚡</span>
+            <span class="font-semibold">Kecepatan Layanan</span>
           </div>
+          <div x-show="open" class="mt-3 text-gray-700 transition-all">Pengiriman makanan cepat dan tepat waktu adalah prioritas utama kami.</div>
         </div>
-        <!-- Repeat for other members -->
-      </div>
-      <!-- Company Stats -->
-      <div class="flex justify-center space-x-8 mt-12">
-        <div class="stat bg-orange-100 px-6 py-4 rounded">
-          <div class="text-2xl font-bold" id="teamUserCount">100K+</div>
-          <div class="text-sm">Pengguna</div>
-        </div>
-        <div class="stat bg-orange-100 px-6 py-4 rounded">
-          <div class="text-2xl font-bold" id="teamRestoranCount">10K+</div>
-          <div class="text-sm">Restoran</div>
+        <div x-data="{ open: false }" class="flex-1 bg-white rounded-lg shadow-lg p-6 cursor-pointer hover:bg-orange-50 transition" @click="open=!open">
+          <div class="flex items-center gap-2">
+            <span class="text-orange-500 text-xl font-bold">🤝</span>
+            <span class="font-semibold">Kepuasan Pelanggan</span>
+          </div>
+          <div x-show="open" class="mt-3 text-gray-700 transition-all">Kami selalu siap mendengar dan meningkatkan pengalaman pelanggan kami.</div>
         </div>
       </div>
-      <!-- Company Values -->
-      <h3 class="text-2xl font-bold mt-12 mb-6 text-center">Nilai Kami</h3>
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="value-card bg-white p-6 rounded-lg shadow hover:bg-orange-50 transition-all cursor-pointer">
-          <h4 class="font-semibold mb-2">Kecepatan</h4>
-          <p>Pesanan sampai dengan cepat dan tepat.</p>
-        </div>
-        <div class="value-card bg-white p-6 rounded-lg shadow hover:bg-orange-50 transition-all cursor-pointer">
-          <h4 class="font-semibold mb-2">Kepuasan Pelanggan</h4>
-          <p>Kami selalu mendengarkan feedback pelanggan.</p>
-        </div>
-        <div class="value-card bg-white p-6 rounded-lg shadow hover:bg-orange-50 transition-all cursor-pointer">
-          <h4 class="font-semibold mb-2">Inovasi</h4>
-          <p>Mengembangkan teknologi terbaru di industri makanan.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
   <script src="assets/js/about.js"></script>
 </body>
 </html>
