@@ -18,7 +18,7 @@
       run();
     }
     window.onload = () => {
-      animateValue("about-users", 0, 12000, 1200);
-      animateValue("about-resto", 0, 120, 900);
-      animateValue("about-delivery", 0, 38000, 1600);
+      animateValue("about-users", 0, 1500, 1200);
+      animateValue("about-resto", 0, 50, 900);
+      animateValue("about-delivery", 0, 3500, 1600);
     };
