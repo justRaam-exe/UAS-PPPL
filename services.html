@@ -1,25 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAS PPPL - Food Delivery Service</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layanan | Yukihira Diningゆきひら</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" href="assets/img/logo-icon.png" type="image/png">
+  <style>
+    .transition-bg {
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .service-card.active, .catalog-card.active {
+      box-shadow: 0 6px 24px 0 rgba(59, 130, 246, 0.25);
+      background-color: #e0f2fe;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-    <section class="py-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3x1 font-bold mb-8 text-center">Katalog Layanan</h2>
-            <!-- filtering -->
-            <div class="mb-6 flex justify-center gap-4">
-                <button class="filter-btn px-4 py-2 bg-orange-500 text-white rounded" data-category="all">Semua</button>
-                <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-category="delivery">Delivery</button>
-                <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-category="promo">Promo</button>
-                <button class="filter-btn px-4 py-2 bg-gray-300 rounded" data-category="membership">Membership</button>
-            </div>
-            <!-- Catalog -->
-            <div class="grid md:grid-cols-3 gap-8" id="serviceCatalog"></div>
+  <!-- Navbar -->
+  <nav class="fixed w-full top-0 left-0 z-50 bg-white shadow border-b border-gray-200 transition-bg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/img/logo-icon.png" alt="Logo" class="w-8 h-8 rounded-full">
+        <span class="font-bold text-lg text-gray-800">Yukihira Dining</span>
+      </a>
+      <ul class="flex gap-6 font-medium">
+        <li><a href="index.html" class="text-gray-700 hover:text-orange-600 transition">Beranda</a></li>
+        <li><a href="menu.html" class="text-gray-700 hover:text-orange-600 transition">Menu</a></li>
+        <li><a href="about.html" class="text-gray-700 hover:text-orange-600 transition">Tentang</a></li>
+        <li><a href="service.html" class="text-gray-700 hover:text-orange-600 transition">Layanan</a></li>
+        <li><a href="contact.html" class="text-gray-700 hover:text-orange-600 transition">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="h-[70px]"></div>
+
+  <!-- Service Section -->
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-blue-800 mb-8">Layanan Kami</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12" id="services">
+      <div class="service-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transition-bg">
+        <img src="assets/img/delivery.svg" alt="Delivery" class="w-16 h-16 mb-4">
+        <h2 class="text-xl font-semibold mb-2">Pengantaran Cepat</h2>
+        <p class="text-gray-600 text-center">Pesananmu akan sampai di tujuan dengan cepat dan aman oleh kurir profesional kami.</p>
+        <div class="mt-4 text-2xl font-bold text-blue-800 service-counter" data-count="98">0</div>
+        <div class="text-sm text-gray-500">Kota tercover</div>
+      </div>
+      <div class="service-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transition-bg">
+        <img src="assets/img/support.svg" alt="Support" class="w-16 h-16 mb-4">
+        <h2 class="text-xl font-semibold mb-2">Layanan Pelanggan</h2>
+        <p class="text-gray-600 text-center">Tim support kami siap membantu 24/7 untuk memastikan kepuasan pelanggan.</p>
+        <div class="mt-4 text-2xl font-bold text-blue-800 service-counter" data-count="24">0</div>
+        <div class="text-sm text-gray-500">Jam support</div>
+      </div>
+      <div class="service-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transition-bg">
+        <img src="assets/img/food-quality.svg" alt="Quality" class="w-16 h-16 mb-4">
+        <h2 class="text-xl font-semibold mb-2">Kualitas Menu</h2>
+        <p class="text-gray-600 text-center">Menu yang disajikan selalu fresh dan diolah dengan standar kebersihan tinggi.</p>
+        <div class="mt-4 text-2xl font-bold text-blue-800 service-counter" data-count="120">0</div>
+        <div class="text-sm text-gray-500">Pilihan menu</div>
+      </div>
+    </div>
+
+    <!-- Catalog Section -->
+    <h2 class="text-2xl font-bold text-blue-800 mb-6">Catalog Menu Spesial</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="catalog">
+      <div class="catalog-card bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden flex flex-col transition-bg">
+        <img src="assets/img/chaliapin-steak.png"
+          alt="Chaliapin Steak Don" class="w-full h-40 object-cover">
+        <div class="p-4 flex flex-col gap-2 flex-1">
+          <h3 class="font-bold text-lg">Chaliapin Steak Don</h3>
+          <p class="text-gray-600 text-sm">Steak marinasi dengan irisan bawang bombai yang telah ditumis.</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="text-blue-800 font-bold">Rp22.000</span>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="catalog-card bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden flex flex-col transition-bg">
+        <img src="assets/img/apple-risotto.png"
+          alt="Apple Risotto" class="w-full h-40 object-cover">
+        <div class="p-4 flex flex-col gap-2 flex-1">
+          <h3 class="font-bold text-lg">Apple Risotto</h3>
+          <p class="text-gray-600 text-sm">Risotto apel dengan topping apel yang dipotong berbentuk dadu dan bacon.</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="text-blue-800 font-bold">Rp30.000</span>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+          </div>
+        </div>
+      </div>
+      <div class="catalog-card bg-white rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden flex flex-col transition-bg">
+        <img src="assets/img/chicken-egg-tempura.png"
+          alt="Chicken Egg Tempura Don" class="w-full h-40 object-cover">
+        <div class="p-4 flex flex-col gap-2 flex-1">
+          <h3 class="font-bold text-lg">Chicken Egg Tempura Don</h3>
+          <p class="text-gray-600 text-sm">Telur beku yang digoreng dengan adonan tempura menghasilkan telur tempura setengah matang di atas nasi.</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="text-blue-800 font-bold">Rp18.000</span>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-800 transition">Pesan</button>
+          </div>
+        </div>
+      </div>
+      <!-- Tambahkan catalog-card lainnya sesuai kebutuhan -->
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-6 mt-10">
+    <div class="max-w-5xl mx-auto text-center">
+      &copy; 2025 Yukihira Diningゆきひら. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Script: Service & Catalog effect -->
+  <script>
+    // Animated counter for each service
+    function animateCount(el, target, duration = 1200) {
+      let start = 0;
+      let startTime = null;
+      function updateCount(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        el.textContent = Math.floor(progress * (target - start) + start);
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(updateCount);
+    }
+    // Run when visible
+    function runCounters() {
+      document.querySelectorAll('.service-counter').forEach(counter => {
+        animateCount(counter, parseInt(counter.dataset.count));
+      });
+    }
+    // Highlight card on hover (service & catalog)
+    function addHoverEffect(selector) {
+      document.querySelectorAll(selector).forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('active'));
+        card.addEventListener('mouseleave', () => card.classList.remove('active'));
+      });
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      runCounters();
+      addHoverEffect('.service-card');
+      addHoverEffect('.catalog-card');
+    });
+  </script>
 </body>
 </html>
