@@ -1,15 +1,26 @@
-<!-- portfolio.html - Halaman Portfolio Yukihira Dining -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio | Yukihira Dining</title>
+  <title>Portfolio | Yukihira Diningゆきひら</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="icon" href="assets/img/logo-icon.png" type="image/png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/alpinejs" defer></script>
+  <style>
+    .testimonial-card, .event-card{
+      transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+
+    .testimonial-card:hover, .event-card:hover {
+      box-shadow: 0 8px 32px 0 rgba(59, 130, 246, .25), 0 2px 4px 0 rgba(0,0,0,0.06);
+      background: #f0f9ff;
+      transform: translateY(-6px) scale(1.03);
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
+  <!-- Navbar -->
   <nav class="fixed w-full top-0 left-0 z-50 bg-white shadow border-b border-gray-200 transition-bg">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
       <a href="index.html" class="flex items-center gap-2">
@@ -18,8 +29,9 @@
       </a>
       <ul class="flex gap-6 font-medium">
         <li><a href="index.html" class="text-gray-700 hover:text-orange-600 transition">Beranda</a></li>
-        <li><a href="services.html" class="text-gray-700 hover:text-orange-600 transition">Menu</a></li>
+        <li><a href="menu.html" class="text-gray-700 hover:text-orange-600 transition">Menu</a></li>
         <li><a href="about.html" class="text-gray-700 hover:text-orange-600 transition">Tentang</a></li>
+        <li><a href="service.html" class="text-gray-700 hover:text-orange-600 transition">Layanan</a></li>
         <li><a href="portfolio.html" class="text-gray-700 hover:text-orange-600 transition">Portfolio</a></li>
         <li><a href="contact.html" class="text-gray-700 hover:text-orange-600 transition">Kontak</a></li>
       </ul>
@@ -27,72 +39,115 @@
   </nav>
   <div class="h-[70px]"></div>
 
-  <main class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold text-blue-800 mb-8 text-center">Proyek Kami</h1>
+  <!-- Hero Portfolio -->
+  <section class="max-w-5xl mx-auto px-4 py-12 text-center">
+    <h1 class="text-3xl font-bold text-blue-800 mb-2">Portfolio & Kepercayaan</h1>
+    <p class="text-lg text-gray-700 mb-6">Yukihira Diningゆきひら telah dipercaya oleh ribuan pelanggan dan puluhan restoran terbaik sebagai solusi pengantaran makanan terdepan.</p>
+  </section>
 
-    <!-- Filterable Grid -->
-    <div class="mb-6 flex justify-center gap-4">
-      <button class="bg-blue-100 text-blue-700 px-4 py-2 rounded filter-btn" data-filter="all">Semua</button>
-      <button class="bg-blue-100 text-blue-700 px-4 py-2 rounded filter-btn" data-filter="app">Aplikasi</button>
-      <button class="bg-blue-100 text-blue-700 px-4 py-2 rounded filter-btn" data-filter="web">Website</button>
+  <!-- Section: Mitra Restoran (Logo grid) -->
+  <section class="max-w-5xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4">Restoran Partner</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
+      <img src="assets/img/partner1.png" alt="Partner 1" class="h-16 object-contain grayscale hover:grayscale-0 transition"/>
+      <img src="assets/img/partner2.png" alt="Partner 2" class="h-16 object-contain grayscale hover:grayscale-0 transition"/>
+      <img src="assets/img/partner3.png" alt="Partner 3" class="h-16 object-contain grayscale hover:grayscale-0 transition"/>
+      <img src="assets/img/partner4.png" alt="Partner 4" class="h-16 object-contain grayscale hover:grayscale-0 transition"/>
+      <img src="assets/img/partner5.png" alt="Partner 5" class="h-16 object-contain grayscale hover:grayscale-0 transition"/>
+      <!-- Tambahkan logo partner lain -->
     </div>
+  </section>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="portfolioGrid">
-      <!-- Card 1 -->
-      <div class="project-card web bg-white rounded-lg shadow-md overflow-hidden hover:scale-105" data-category="web">
-        <img src="assets/img/portfolio1.jpg" alt="Proyek Website 1" class="w-full h-40 object-cover cursor-pointer" onclick="openModal('portfolio1.jpg', 'Website Delivery System', 'Website ini sangat membantu restoran kami menjangkau lebih banyak pelanggan.')">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">Website Delivery System</h3>
-          <p class="text-sm text-gray-600">Sistem pemesanan makanan online untuk restoran lokal.</p>
-        </div>
+  <!-- Section: Testimoni Pelanggan -->
+  <section class="max-w-5xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4">Testimoni Pelanggan</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="testimonial-card bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <img src="assets/img/user1.jpg" class="w-14 h-14 rounded-full mb-2" alt="User 1">
+        <p class="italic mb-2 text-gray-700">"Pesanan datang lebih cepat dari estimasi. Kurirnya ramah!"</p>
+        <span class="text-blue-800 font-semibold">Dewi, Surabaya</span>
       </div>
-      <!-- Card 2 -->
-      <div class="project-card app bg-white rounded-lg shadow-md overflow-hidden hover:scale-105" data-category="app">
-        <img src="assets/img/portfolio2.jpg" alt="Aplikasi Mobile" class="w-full h-40 object-cover cursor-pointer" onclick="openModal('portfolio2.jpg', 'Aplikasi Mobile', 'Aplikasi Yukihira sangat mudah digunakan dan mempercepat pemesanan.')">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">Aplikasi Mobile</h3>
-          <p class="text-sm text-gray-600">Aplikasi Android untuk tracking dan pemesanan makanan.</p>
-        </div>
+      <div class="testimonial-card bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <img src="assets/img/user2.jpg" class="w-14 h-14 rounded-full mb-2" alt="User 2">
+        <p class="italic mb-2 text-gray-700">"Pilihan menunya banyak dan selalu fresh. Recommended!"</p>
+        <span class="text-blue-800 font-semibold">Rama, Jakarta</span>
       </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
-      <div class="bg-white p-6 rounded-lg max-w-md w-full relative">
-        <button class="absolute top-2 right-2 text-gray-500 hover:text-red-600" onclick="closeModal()">✕</button>
-        <img id="modalImage" src="" alt="Detail Gambar" class="w-full h-60 object-cover rounded mb-4">
-        <h3 id="modalTitle" class="text-xl font-bold"></h3>
-        <p id="modalTestimonial" class="text-sm text-gray-600"></p>
+      <div class="testimonial-card bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <img src="assets/img/user3.jpg" class="w-14 h-14 rounded-full mb-2" alt="User 3">
+        <p class="italic mb-2 text-gray-700">"Sering ada promo dan fitur aplikasi mudah digunakan."</p>
+        <span class="text-blue-800 font-semibold">Hana, Bandung</span>
       </div>
     </div>
-  </main>
+  </section>
 
-  <!-- <footer class="bg-gray-800 text-white py-6 mt-10">
+  <!-- Section: Studi Kasus/Event -->
+  <section class="max-w-5xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4">Event & Studi Kasus</h2>
+    <div class="event-card bg-white rounded-xl shadow p-6 flex flex-col md:flex-row gap-6 items-center">
+      <img src="assets/img/event1.jpg" class="w-full md:w-52 h-36 object-cover rounded-lg" alt="Event 1">
+      <div>
+        <h3 class="font-semibold text-blue-700 mb-1">Event Ramadan: Berbagi Takjil Gratis</h3>
+        <p class="text-gray-700">Setiap Ramadan, Yukihira Diningゆきひら membagikan ribuan takjil gratis ke berbagai titik di kota besar bersama mitra restoran dan driver kami.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Galeri Foto -->
+  <section class="max-w-5xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4">Galeri Pengantaran & Menu</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="assets/img/gallery1.jpg" class="rounded-xl object-cover h-36 w-full" alt="Galeri 1">
+      <img src="assets/img/gallery2.jpg" class="rounded-xl object-cover h-36 w-full" alt="Galeri 2">
+      <img src="assets/img/gallery3.jpg" class="rounded-xl object-cover h-36 w-full" alt="Galeri 3">
+      <img src="assets/img/gallery4.jpg" class="rounded-xl object-cover h-36 w-full" alt="Galeri 4">
+      <!-- Tambahkan foto lain sesuai kebutuhan -->
+    </div>
+  </section>
+
+  <!-- Section: Statistik -->
+  <section class="max-w-5xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4">Statistik Layanan</h2>
+    <div class="flex flex-wrap gap-8 justify-center">
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center min-w-[160px]">
+        <div class="text-3xl font-bold text-blue-800" id="stat-orders">0</div>
+        <div class="text-gray-600">Pesanan Sukses</div>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center min-w-[160px]">
+        <div class="text-3xl font-bold text-blue-800" id="stat-users">0</div>
+        <div class="text-gray-600">Pelanggan Puas</div>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center min-w-[160px]">
+        <div class="text-3xl font-bold text-blue-800" id="stat-resto">0</div>
+        <div class="text-gray-600">Restoran Partner</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white py-6 mt-10">
     <div class="max-w-5xl mx-auto text-center">
       &copy; 2025 Yukihira Diningゆきひら. All rights reserved.
     </div>
-  </footer> -->
+  </footer>
 
+  <!-- Script: Statistik Dinamis -->
   <script>
-    // Modal Logic
-    function openModal(image, title, testimonial) {
-  document.getElementById('modalImage').src = 'assets/img/' + image;
-  document.getElementById('modalTitle').innerText = title;
-  document.getElementById('modalTestimonial').innerText = testimonial;
-  document.getElementById('modal').classList.remove('hidden');
-}
-    function closeModal() {
-      document.getElementById('modal').classList.add('hidden');
+    function animateValue(id, end, duration) {
+      let obj = document.getElementById(id);
+      let start = 0;
+      let startTime = null;
+      function run(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        obj.textContent = Math.floor(progress * (end - start) + start);
+        if (progress < 1) requestAnimationFrame(run);
+        else obj.textContent = end.toLocaleString();
+      }
+      requestAnimationFrame(run);
     }
-
-    // Filter Logic
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const category = btn.dataset.filter;
-        document.querySelectorAll('.project-card').forEach(card => {
-          card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
-        });
-      });
+    window.addEventListener('DOMContentLoaded', () => {
+      animateValue("stat-orders", 38000, 1800);
+      animateValue("stat-users", 12000, 1200);
+      animateValue("stat-resto", 120, 900);
     });
   </script>
 </body>
