@@ -28,12 +28,12 @@
         <span class="font-bold text-lg text-gray-800">Yukihira Dining</span>
       </a>
       <ul class="flex gap-6 font-medium">
-        <li><a href="index.html" class="text-gray-700 hover:text-orange-600 transition">Beranda</a></li>
-        <li><a href="menu.html" class="text-gray-700 hover:text-orange-600 transition">Menu</a></li>
-        <li><a href="about.html" class="text-gray-700 hover:text-orange-600 transition">Tentang</a></li>
-        <li><a href="service.html" class="text-gray-700 hover:text-orange-600 transition">Layanan</a></li>
-        <li><a href="portfolio.html" class="text-gray-700 hover:text-orange-600 transition">Portfolio</a></li>
-        <li><a href="contact.html" class="text-gray-700 hover:text-orange-600 transition">Kontak</a></li>
+        <li><a href="index.html" class="text-gray-700 hover:text-blue-400 transition">Beranda</a></li>
+        <li><a href="about.html" class="text-gray-700 hover:text-blue-400 transition">Tentang</a></li>
+        <li><a href="service.html" class="text-gray-700 hover:text-blue-400 transition">Layanan</a></li>
+        <li><a href="portfolio.html" class="text-gray-700 hover:text-blue-400 transition">Portfolio</a></li>
+        <li><a href="contact.html" class="text-gray-700 hover:text-blue-400 transition">Kontak</a></li>
+        <li><a href="blog.html" class="text-gray-700 hover:text-blue-400 transition">Blog</a></li>
       </ul>
     </div>
   </nav>
@@ -65,17 +65,17 @@
       <div class="testimonial-card bg-white rounded-xl shadow p-6 flex flex-col items-center">
         <img src="assets/img/user1.jpg" class="w-14 h-14 rounded-full mb-2" alt="User 1">
         <p class="italic mb-2 text-gray-700">"Pesanan datang lebih cepat dari estimasi. Kurirnya ramah!"</p>
-        <span class="text-blue-800 font-semibold">Dewi, Surabaya</span>
+        <span class="text-blue-800 font-semibold">Isami, Surabaya</span>
       </div>
       <div class="testimonial-card bg-white rounded-xl shadow p-6 flex flex-col items-center">
         <img src="assets/img/user2.jpg" class="w-14 h-14 rounded-full mb-2" alt="User 2">
         <p class="italic mb-2 text-gray-700">"Pilihan menunya banyak dan selalu fresh. Recommended!"</p>
-        <span class="text-blue-800 font-semibold">Rama, Jakarta</span>
+        <span class="text-blue-800 font-semibold">Takumi, Jakarta</span>
       </div>
       <div class="testimonial-card bg-white rounded-xl shadow p-6 flex flex-col items-center">
         <img src="assets/img/user3.jpg" class="w-14 h-14 rounded-full mb-2" alt="User 3">
         <p class="italic mb-2 text-gray-700">"Sering ada promo dan fitur aplikasi mudah digunakan."</p>
-        <span class="text-blue-800 font-semibold">Hana, Bandung</span>
+        <span class="text-blue-800 font-semibold">Erina, Bandung</span>
       </div>
     </div>
   </section>
@@ -130,25 +130,6 @@
   </footer>
 
   <!-- Script: Statistik Dinamis -->
-  <script>
-    function animateValue(id, end, duration) {
-      let obj = document.getElementById(id);
-      let start = 0;
-      let startTime = null;
-      function run(currentTime) {
-        if (!startTime) startTime = currentTime;
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-        obj.textContent = Math.floor(progress * (end - start) + start);
-        if (progress < 1) requestAnimationFrame(run);
-        else obj.textContent = end.toLocaleString();
-      }
-      requestAnimationFrame(run);
-    }
-    window.addEventListener('DOMContentLoaded', () => {
-      animateValue("stat-orders", 38000, 1800);
-      animateValue("stat-users", 12000, 1200);
-      animateValue("stat-resto", 120, 900);
-    });
-  </script>
+  <script src="assets/js/portfolio.js"></script>
 </body>
 </html>
