@@ -8,5 +8,5 @@ Deskripsi Website:
 website ini menyediakan berbagai varian menu yang tentu saja membuat siapa pun nagih cuman dengan melihat gambar saja
 
 Website ini dibuat dengan HTML CSS(Tailwind CSS) JS
-- HTML dan CSS untuk design website
+- HTML dan Tailwind CSS untuk design website
 - JS untuk button serta icon interaktif 
