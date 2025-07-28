@@ -12,7 +12,7 @@ function animateValue(id, end, duration) {
       requestAnimationFrame(run);
     }
     window.addEventListener('DOMContentLoaded', () => {
-      animateValue("stat-orders", 38000, 1800);
-      animateValue("stat-users", 12000, 1200);
-      animateValue("stat-resto", 120, 900);
+      animateValue("stat-orders", 5000, 1300);
+      animateValue("stat-users", 1200, 800);
+      animateValue("stat-resto", 80, 900);
     });
